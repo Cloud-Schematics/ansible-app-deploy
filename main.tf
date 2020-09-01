@@ -1,7 +1,7 @@
 
 provider "ibm" {
   # ibmcloud_api_key = var.ibmcloud_api_key
-  version = "~> 1.5.3"
+  version = ">= 1.5.3"
 }
 
 data "ibm_schematics_workspace" "vpc" {
