@@ -41,9 +41,9 @@ defined in the site.yml playbook file.
 
 |  **Name**                  | **Version** |
 |  --------------------------| -------------|
-|  terraform                 | ~> 0.12 |
+|  terraform                 | ~> 1.0 |
 |  terraform_provisioner_ansible | ~> 2.3.3 |
-|  terraform_provider_ibm    | ~> 1.5.3 |
+|  terraform_provider_ibm    | ~> 1.33 |
 
 
 ## Inputs
@@ -72,7 +72,7 @@ defined in the site.yml playbook file.
        - Enter a name for your workspace.   
        - Click **Create** to create your workspace.
     2.  On the workspace **Settings** page, enter the URL of this example from the Schematics examples Github repository.
-     - Select the Terraform version: Terraform 0.12.
+     - Select the Terraform version: Terraform 1.0 or higher
      - Click **Save template information**.
      - In the **Input variables** section,  The only two parameters are:
          - workspace_id of the VPC workspace
