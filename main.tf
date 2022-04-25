@@ -1,21 +1,39 @@
 
-provider "ibm" {
-  # ibmcloud_api_key = var.ibmcloud_api_key
-  version = ">= 1.5.3"
+terraform {
+  required_version = ">= 1.0.0, < 2.0.0"
+  required_providers {
+    ibm = {
+      source  = "IBM-Cloud/ibm"
+      version = "~> 1.33.0"
+    }
+  }
 }
 
 data "ibm_schematics_workspace" "vpc" {
   workspace_id = var.workspace_id
 }
 
+# output "schematics_workspace" {
+#   value = data.ibm_schematics_workspace.vpc
+# }
+
+
 data "ibm_schematics_output" "vpc" {
   workspace_id = var.workspace_id
-  template_id  = "${data.ibm_schematics_workspace.vpc.template_id.0}"
+  # template_id  = "c7ed00f0-782d-4d"
+  template_id = data.ibm_schematics_workspace.vpc.runtime_data[0].id
 }
+
+output "schematics_outputs" {
+  value = data.ibm_schematics_output.vpc
+}
+
+
+
 
 data "ibm_schematics_state" "vpc" {
   workspace_id = var.workspace_id
-  template_id  = "${data.ibm_schematics_workspace.vpc.template_id.0}"
+  template_id  = data.ibm_schematics_workspace.vpc.runtime_data[0].id
 }
 
 
