@@ -16,7 +16,7 @@ This example was written for use with IBM Cloud Schematics and assumes that the 
  
 
 For a detailed explanation of how to use and configure the Terraform Ansible provisioner, please see the IBM Developer article
-[Application deployment with Redhat Ansible and IBM Cloud Schematics]().
+[Application deployment with Redhat Ansible and IBM Cloud Schematics](https://developer.ibm.com/articles/secure-vpc-access-with-a-bastion-host-and-terraform/).
 
 
 ## Usage with Redhat Ansible
@@ -76,7 +76,11 @@ defined in the site.yml playbook file.
      - Click **Save template information**.
      - In the **Input variables** section,  The only two parameters are:
          - workspace_id of the VPC workspace
+           - Open new browser tab, nagivate to VPC workspace, open Settings tab, copy `Workspace ID` field contents
+           - Paste into `workspace_id` variable. 
          - private SSH key generated for the VPC workspace  
+           - In a terminal session print to the screen the generated private key, copy output `cat ~/.ssh/<ssh_key_name>.pub`
+           - Paste ssh key output into the workspace `ss_private_key` variable and set sensitive flag. 
 
       - Click **Save changes**.
 
