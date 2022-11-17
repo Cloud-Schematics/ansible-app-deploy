@@ -86,8 +86,7 @@ variable "ssh_private_key" {
 # }
 
 variable "workspace_id" {
-  description = "Id of the source Schematics Workspace for target VSIs"
-  default     = "ssh_bastion-host-0353ce37-3748-4c"
+  description = "ID of the VPC Workspace containing VSIs, e.g. us-south.workspace.<VPC_workspace>.123456790"
 }
 
 
